@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { T, NAV } from "@/lib/theme";
 import { Container, Btn, ArrowR } from "@/components/ui/Shared";
 
 export function Footer() {
   const router = useRouter();
+  const pathname = usePathname();
+  if (pathname?.startsWith("/portal")) return null;
   return (
     <footer style={{ background: T.ink, color: "#EDEEF2" }}>
       <Container style={{ padding: "72px 24px 36px" }}>

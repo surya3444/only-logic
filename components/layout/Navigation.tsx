@@ -20,6 +20,8 @@ export function Navbar() {
   
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  if (pathname?.startsWith("/portal")) return null;
+
   return (
     <header style={{ position: "sticky", top: 0, zIndex: 50, background: sc ? "rgba(252,251,248,.85)" : "transparent", backdropFilter: sc ? "blur(14px)" : "none", borderBottom: `1px solid ${sc ? T.line : "transparent"}`, transition: "all .35s" }}>
       <Container style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
